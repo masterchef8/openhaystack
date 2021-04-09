@@ -20,9 +20,9 @@ struct AccessoryListEntry: View {
     var deployAccessoryToMicrobit: (Accessory) -> Void
     var zoomOn: (Accessory) -> Void
     let formatter = DateFormatter()
-
+    
     @State var editingName: Bool = false
-
+    
     func timestampView() -> some View {
         formatter.dateStyle = .short
         formatter.timeStyle = .short
@@ -49,8 +49,8 @@ struct AccessoryListEntry: View {
                 } else {
                     Text(accessory.name)
                         .font(.headline)
+                    self.timestampView()
                 }
-                self.timestampView()
             }
 
             Spacer()
